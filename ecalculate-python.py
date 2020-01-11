@@ -1,5 +1,8 @@
 import math
 
+# The calculation function
+# Param: n: The number of digits to be calculated
+# Return: The array of calculated values
 def ecalculation(n):
   # Initialize return array with n + 1 digits (to account for beginning 2)
   d = [None] * (n + 1)
@@ -26,12 +29,15 @@ def ecalculation(n):
     d[i] = carry
   return d
 
+# Get user input
 arrayOfDigits = ecalculation(int(input("Enter the number of decimal points to calculate")))
 filename = input("Enter the name of the file to store the value of e")
 
+# Push results to the user-inputted filename
 f = open(filename, "w")
 for i in range (0, len(arrayOfDigits) - 1):
     if i == 0:
+        # include decimal place
         f.write(str(arrayOfDigits[i]) + ".")
     else:
         f.write(str(arrayOfDigits[i]))
