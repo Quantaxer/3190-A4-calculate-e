@@ -11,12 +11,12 @@ This program calculates e to a certain number of digits and saves it to a file. 
 	- gnatmake -Wall ecalculateada.adb
 	- ./ecalculateada
 
-C:
+- C:
 	- gcc -Wall -std=c11 -c ecalculate-c.c -o ecalculate-c.o -lm
 	- gcc ecalculate-c.o -o ecalculatec -lm
 	- ./ecalculatec
 
-Python: 
+- Python: 
 	- python3 ecalculate-python.py
 
 
