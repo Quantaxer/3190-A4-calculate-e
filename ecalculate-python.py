@@ -4,7 +4,8 @@ import math
 # Param: n: The number of digits to be calculated
 # Return: The array of calculated values
 def ecalculation(n):
-  # Initialize return array with n + 1 digits (to account for beginning 2)
+  # Initialize return array with n + 1 digits (to account for beginning 2), add 1 to input because decimal points
+  n = n + 1
   d = [None] * (n + 1)
   m = 4
   test = (n + 2) * 2.30258509
@@ -30,8 +31,8 @@ def ecalculation(n):
   return d
 
 # Get user input
-arrayOfDigits = ecalculation(int(input("Enter the number of decimal points to calculate")))
-filename = input("Enter the name of the file to store the value of e")
+arrayOfDigits = ecalculation(int(input("Enter a positive number of decimal points to calculate for e ")))
+filename = input("Enter the name of the file to store the value of e ")
 
 # Push results to the user-inputted filename
 f = open(filename, "w")

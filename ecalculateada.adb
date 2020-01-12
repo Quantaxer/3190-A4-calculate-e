@@ -64,11 +64,11 @@ procedure ecalculateada is
 	-- Param: n: The number of digits to calculate
 	-- Returns: integer that lets the main program know if it completed successfully
 	function calculateAndWriteToFile(n : integer) return integer is
-		arrayOfDigits: unknownArray (0..n - 1);
+		arrayOfDigits: unknownArray (0..n);
 		outfp: file_type;
 		fileName: unbounded_string;
 	begin
-		arrayOfDigits := ecalculation(n - 1);
+		arrayOfDigits := ecalculation(n);
 
 		--Get user input for filename. If file DNE create it.
 		put_line("Enter the name of the file to store the value of e");
@@ -80,7 +80,7 @@ procedure ecalculateada is
 		end if;
 
 		-- Loop through array of digits and write it to a file
-		for i in 0..n - 1 loop
+		for i in 0..n loop
 			if i = 0 then
 				-- Also write decimal point
 				put (outfp, arrayOfDigits(i), 0, 10);
@@ -95,7 +95,7 @@ procedure ecalculateada is
 
 -- Main program
 begin
-	put_line("Enter the number of decimal points to calculate");
+	put_line("Enter a positive number of decimal points to calculate for e");
 	get_line(numOfItems);
 	done := calculateAndWriteToFile(Integer'Value(to_string(numOfItems)));
 

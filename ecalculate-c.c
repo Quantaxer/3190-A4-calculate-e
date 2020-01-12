@@ -31,19 +31,20 @@ void ecalculation(int n, int arr[]) {
 	}
 }
 
+//Main program loop
 int main() {
 	FILE *fp;
 	int numOfItems = 1;
 
 	//Get user input and run the calculations for e
-	printf("Enter the number of decimal points to calculate\n");
+	printf("Enter a positive number of decimal points to calculate for e\n");
 	scanf("%d", &numOfItems);
 	int *arrayOfDigits = malloc((numOfItems + 1) * sizeof(int));
 	ecalculation(numOfItems, arrayOfDigits);
 
 	//Write the results to a user-inputted filename
-	char fileName[100];
-	printf("Enter the name of the file to store the value of e\n");
+	char fileName[50];
+	printf("Enter the name of the file to store the value of e (Max 50 characters)\n");
 	scanf("%s", fileName);
 
 	fp = fopen(fileName, "wb");
